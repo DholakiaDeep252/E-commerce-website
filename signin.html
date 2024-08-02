@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login1.css">
+    <title>MyMarket</title>
+<script>
+    function check(){
+        var storedName = localStorage.getItem('name');
+        var storedPw = localStorage.getItem('pw');
+    
+        var userName = document.getElementById('userName');
+        localStorage.setItem('userName', userName.value);
+        var userPw = document.getElementById('userPw');
+        localStorage.setItem('userPw', userPw.value);
+      
+    
+        if(userName.value == storedName && userPw.value == storedPw){
+            alert('You are logged in.');
+        }else{
+            alert('Error on login');
+            
+        }
+    }</script>
+</head>
+<body >
+    <center>
+        <div class="card">
+            <form action="home.html">
+            <div class="card-header">
+              <div class="text-header">Register</div>
+            </div>
+            <div class="card-body">
+              <form action="home.html">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input required="" class="form-control" name="userName" id="userName" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input required="" class="form-control" name="password" id="userPw" type="password">
+                </div>
+                
+               <input type="submit" class="btn" value="submit" onclick="check()">   
+            </div>
+            </form>
+          </div>
+          
+</center>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login1.css">
+    <title>MyMarket</title>
+    <script>//checking
+        function check(){
+            var storedName = localStorage.getItem('name');
+            var storedPw = localStorage.getItem('pw');
+        
+            var userName = document.getElementById('userName');
+            var userPw = document.getElementById('userPw');
+          
+        
+            if(userName.value == storedName && userPw.value == storedPw){
+                alert('order success.');
+            }else{
+                alert('Error on order');
+                
+            }
+        }</script>
+</head>
+<body >
+    <center>
+        <div class="card">
+            <div class="card-header">
+              <div class="text-header">Place your Order</div>
+            </div>
+            <h2>Rs.<script>
+                document.write(localStorage.getItem('totalPrice'));
+            </script></h2>
+            <div class="card-body">
+              <form action="home.html">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input required="" class="form-control" name="username" id="name" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input required="" class="form-control" name="email" id="email" type="email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input required="" class="form-control" name="password" id="password" type="password">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mobile No:</label>
+                    <input required="" class="form-control"  type="number" min="1000000000" max="9999999999" >
+                  </div>
+                  <div class="form-group">
+                    <label >Address:</label>
+                    <input required="" class="form-control"  type="text" >
+                  </div>
+                  <div class="form-group">
+                    <label>Select Method:</label>
+                    <select >
+                        <option >select method</option>
+                        <option>COD</option>
+                        <option >Net banking</option>
+                        </select>
+                        <br>
+                          </div>
+                         
+               <input type="submit" class="btn" value="submit" onclick="check()">    </form>
+            </div>
+          </div>
+          
+
+</center>
+</body>
+</html>
+
